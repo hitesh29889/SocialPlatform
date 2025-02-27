@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Details - Social Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+        }
+        .left-section, .right-section { 
+            height: 100%; 
+        }
+        .group-pic { 
+            height: 25%; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .group-pic img { 
+            width: 100%; 
+            max-width: 200px; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+        .group-info { 
+            height: 25%; 
+            padding: 20px; 
+            background-color: #fff; 
+        }
+        .users-list { 
+            height: 50%; 
+            overflow-y: auto; 
+            padding: 20px; 
+            background-color: #fff; 
+        }
+        .chat-box { 
+            height: calc(100% - 70px); /* Adjust for input group height */
+            overflow-y: auto; 
+            padding: 15px; 
+            background-color: #e5ddd5; /* WhatsApp-like background */
+        }
+        .message { 
+            max-width: 70%; 
+            margin-bottom: 10px; 
+            padding: 8px 12px; 
+            border-radius: 8px; 
+            word-wrap: break-word; 
+        }
+        .message-you { 
+            background-color: #dcf8c6; /* Light green for your messages */
+            margin-left: auto; 
+            text-align: right; 
+        }
+        .message-other { 
+            background-color: #ffffff; /* White for other users' messages */
+            margin-right: auto; 
+            text-align: left; 
+        }
+        .online-status { 
+            display: inline-block; 
+            width: 10px; 
+            height: 10px; 
+            border-radius: 50%; 
+            margin-right: 5px; 
+        }
+        .online { background-color: #28a745; }
+        .offline { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Social Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="users.html">Users</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="groups.html">Groups</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Side (50%) -->
+            <div class="col-md-6 left-section">
+                <!-- Group Picture (25%) -->
+                <div class="group-pic">
+                    <img src="group.jpg" class="rounded" alt="Group DP">
+                </div>
+
+                <!-- Group Details (25%) -->
+                <div class="group-info">
+                    <h3>Coffee Lovers</h3>
+                    <p><strong>Members:</strong> 45</p>
+                    <p><strong>Topic/Tags:</strong> Coffee, Social, Meetups</p>
+                    <p><strong>Created:</strong> Jan 15, 2024 | <strong>Active:</strong> Yes</p>
+                </div>
+
+                <!-- Users List (50%) -->
+                <div class="users-list">
+                    <h5>Members</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><span class="online-status online"></span>johndoe123 (Online)</span>
+                            <a href="chat.html" class="btn btn-primary btn-sm">Message</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><span class="online-status offline"></span>janesmith456 (Offline)</span>
+                            <a href="chat.html" class="btn btn-primary btn-sm">Message</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><span class="online-status online"></span>bobsmith789 (Online)</span>
+                            <a href="chat.html" class="btn btn-primary btn-sm">Message</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><span class="online-status offline"></span>alicejones101 (Offline)</span>
+                            <a href="chat.html" class="btn btn-primary btn-sm">Message</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side (50%) - Group Chat -->
+            <div class="col-md-6 right-section">
+                <h4 class="text-center mb-3">Group Chat - Coffee Lovers</h4>
+                <div class="chat-box">
+                    <div class="message message-other">
+                        <strong>johndoe123:</strong> Hey everyone, anyone up for coffee this weekend?
+                    </div>
+                    <div class="message message-other">
+                        <strong>janesmith456:</strong> I’d love to, but I’m out of town.
+                    </div>
+                    <div class="message message-you">
+                        <strong>You:</strong> I’m in! What time works for everyone?
+                    </div>
+                    <div class="message message-other">
+                        <strong>bobsmith789:</strong> Count me in!
+                    </div>
+                    <div class="message message-other">
+                        <strong>alicejones101:</strong> Maybe next time, busy this week.
+                    </div>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control" placeholder="Type a message...">
+                    <button class="btn btn-primary" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
